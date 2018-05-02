@@ -20,8 +20,10 @@ var users = {
     18: "Pearce"
 }
 document.addEventListener("click", function(event) {
+	console.log(event.target);
     if (event.path[1].classList.contains("sitter-info")) {popupInfo(event.path[1].childNodes[1].textContent);}
 	else if (event.path[0].classList.contains("modal")){document.getElementById("bd").removeChild(event.path[0]);}
+	else if (event.path[0].tagName==="text"){console.log("event.path[0].textContent");}
 });
 
 
@@ -102,10 +104,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 
         sitter.className = "sitter-info card";
+		sitter.id = "info_" + username;
 
     }
-	
-	mapnumber();
+
 });
 
 function resetImgSizeWH(img, nw, nh, w, h) {

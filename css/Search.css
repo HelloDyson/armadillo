@@ -1,7 +1,8 @@
 @import url("../masterstyle.css");
 
-.body #bd{
+.body{
 	font-family: 'Montserrat', sans-serif;
+	overflow: hidden;
 }
 
 .header-bar{
@@ -73,6 +74,7 @@
     align-items: left;
     background-color: var(--light);
     height: 70px;
+	grid-area: h;
 }
 .logo{
     width: 30%;
@@ -110,9 +112,12 @@
 }
 .main{
 	font-family: 'Montserrat', sans-serif;
-    display: grid;
-    grid-template-areas: 'left-split right-split';
+	display: grid;
+    grid-template-areas:
+            'h h'
+            'l r';
     grid-template-columns: 500px 1fr;
+	grid-template-rows: 70px 1fr;
     height: 768px;
 }
 .sitter-image{
@@ -124,10 +129,12 @@
 .left-split{
     overflow: scroll;
 	background-color: var(--light);
+	grid-area: l;
 }
 .right-split{
 	overflow: hidden;
     background-color: var(--light);
+	grid-area: r;
 }
 .number{
     font-size: 90px;
@@ -137,6 +144,7 @@
     align-self: center;
     position: relative;
     vertical-align: center;
+    line-height: 1em;
 }
 .sitter-name{
     grid-area: b;
@@ -227,6 +235,11 @@
 .sitter-info:hover{
     box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24), 0 5px 5px 0 rgba(0,0,0,0.19);
     /* background-color: var(--blue); */
+    border-color: var(--green);
+    border-width: 2px;
+}
+.onhover{
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24), 0 5px 5px 0 rgba(0,0,0,0.19);
     border-color: var(--green);
     border-width: 2px;
 }
