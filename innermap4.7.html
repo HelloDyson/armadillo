@@ -4,7 +4,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="viewport" content="initial-scale=15,maximum-scale=15,user-scalable=no">
 	<title>sitter layer API4.7</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates" rel="stylesheet">
 	<link rel="stylesheet" href="https://js.arcgis.com/4.7/esri/css/main.css">
@@ -24,8 +24,7 @@
 		require([
 
 			"esri/Map",
-
-			"esri/views/MapView",
+			"esri/views/SceneView",
 
 			"esri/layers/FeatureLayer",
 			"esri/layers/support/LabelClass",
@@ -37,7 +36,7 @@
 
 		  function(
 
-			Map, MapView,
+			Map, SceneView,
 
 			FeatureLayer,LabelClass,TextSymbol
 
@@ -69,6 +68,7 @@
 					type: "text",  // autocasts as new TextSymbol()
 					color: "black",
 					size:20
+
 				},
 				labelPlacement: "center-center",
 			});
@@ -81,27 +81,22 @@
 			});
 			
 			
-			var view = new MapView({
+			var view = new SceneView({
 				container: "viewDiv",
+                qualityProfile: "high",
 				map: map,
-				center: [-71.100955, 42.363748],
-				zoom: 15,
+                // camera: {
+                //     position: [-71.100955, 42.363748, 3000],
+                //     tilt: 0
+                // },
+                center: [-71.100955, 42.363748],
+                zoom: 15,
 
 			});
+			// view.environment.atmosphere.quality="high";
 
 
-
-			/********************
-
-			 * Add feature layer
-
-			 ********************/
-
-
-
-			// Carbon storage of trees in Warren Wilson College.
-
-			var featureLayer = new FeatureLayer({
+              var featureLayer = new FeatureLayer({
 
 			  	url: "https://services6.arcgis.com/Tvr1lF94GTEgG2UT/arcgis/rest/services/Sitters/FeatureServer/0",
 				outFields: ["*"],
@@ -109,15 +104,18 @@
 				labelsVisible: true,
 				labelingInfo: [{
 					labelExpression: "[num]",
-					labelPlacement: "always-horizontal",
+					labelPlacement: "center-center",
 					symbol: {
 						type: "text",  // autocasts as new TextSymbol()
-						color: [ 255,255,255,0.85 ],
+						color: [ 0,0,0,1 ],
 						font: {
-							size: 16,
-							weight: "bolder"
+							size: 14,
+                            family: "monospace",
+							// weight: "bolder",
+
 						}
 					},
+                    xoffset: "10px",
 					minScale: 0,
 					maxScale: 0
 				}]
@@ -132,7 +130,19 @@
 			view.on("pointer-down", eventHandler);
 			function eventHandler(event) {
 				view.hitTest(event).then(getGraphics);
+
 			}
+            view.on("mouse-wheel", eventHandler);
+            function eventHandler(event) {
+                event.stopPropagation();
+                view.hitTest(event).then(getGraphics);
+            }
+
+            view.goTo({
+              target: view.graphics,
+              heading: 0,
+              tilt: 0
+            });
 			
 			function getGraphics(response) {
 				var graphic = response.results.filter(function(result) {
@@ -143,6 +153,10 @@
 				var num = attributes.num;
 				var name = attributes.name;
 				console.log(num + ": " + name);
+				var info_card = window.parent.document.getElementById("info_" + name);
+				info_card.parentElement.scrollTop = 230*(num-1);
+                info_card.classList.add("onhover");
+                setTimeout(function(){ info_card.classList.remove("onhover"); }, 2000);
 			}
 		});
 

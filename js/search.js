@@ -104,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 
         sitter.className = "sitter-info card";
+		sitter.id = "info_" + username;
 
     }
 

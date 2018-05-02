@@ -144,6 +144,7 @@
     align-self: center;
     position: relative;
     vertical-align: center;
+    line-height: 1em;
 }
 .sitter-name{
     grid-area: b;
@@ -234,6 +235,11 @@
 .sitter-info:hover{
     box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24), 0 5px 5px 0 rgba(0,0,0,0.19);
     /* background-color: var(--blue); */
+    border-color: var(--green);
+    border-width: 2px;
+}
+.onhover{
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.24), 0 5px 5px 0 rgba(0,0,0,0.19);
     border-color: var(--green);
     border-width: 2px;
 }
