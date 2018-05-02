@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Armadillo: Pet Profile</title>
+	<link rel="stylesheet" href="./css/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="masterstyle.css">
+	<link rel="stylesheet" href="main.css">
+	<script type="text/javascript" src="bootstrap.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates" rel="stylesheet">
+</head>
+<body>
+
+	<header>
+	    <a id = "logo" href="main.html">Armadillo</a>
+	    <a id = "loginbutton" href = "dasboard.html"><button>Dashboard</button></a>
+	</header>
+	<main>
+		<div id = "formcontainer">
+
+			<h1>Add your pet:</h1>
+
+			<form>
+			  <div class="form-group">
+			    <label for="exampleFormControlInput1">Pet's Name</label>
+			    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Momo">
+			  </div>
+	  		  <div class="form-group">
+			    <label for="exampleFormControlInput1">Type</label>
+				<select class="form-control" id="exampleFormControlSelect1">
+					<option>Dog</option>
+					<option>Cat</option>
+					<option>Fish</option>
+					<option>Chicken</option>
+					<option>Turtle</option>
+				</select>
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleFormControlInput1">Breed</label>
+			    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Pomeranian">
+			  </div>
+			<div class="form-group">
+				<label for="exampleFormControlSelect1">Age (Years)</label>
+				<select class="form-control" id="exampleFormControlSelect1">
+					<option>0-1</option>
+					<option>1-3</option>
+					<option>3-6</option>
+					<option>6-8</option>
+					<option>8+</option>
+				</select>
+			</div>
+			  <div class="form-group">
+			    <label for="exampleFormControlInput1">Pet Photo</label>
+			    <div class="petphoto">
+				    <img src="puffdog.jpg" class="img-thumbnail">
+				    <button class="btn btn-primary">Select Photo</button>
+				</div>
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleFormControlTextarea1">General Care Description</label>
+			    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Optional"></textarea>
+			  </div>
+			</form>
+			<a href="dasboard.html"><button type="submit" class="btn btn-primary">All Done!</button></a>
+		</div>
+	</main>
+	<footer>
+		
+	</footer>
+
+</body>
+</html>

@@ -2,9 +2,11 @@
 <html>
 <head>
 	<title>Armadillo Login</title>
+	<link rel="stylesheet" href="./css/bootstrap/bootstrap.css">
 	<link rel="stylesheet" href="masterstyle.css">
 	<link rel="stylesheet" href="main.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates" rel="stylesheet">
+	<script src="bootstrap.js"></script>
 	<script src="main.js"></script>
 </head>
 <body>
@@ -18,36 +20,39 @@
 			<div class = "tab" id = "tab2" onclick ="switchTabs(event,'newuser')">New User?</div>
 			<!--form content-->
 			<div id = "centerfolder">
+
+				<!--returning user-->
 				<div class = "tabcontent active" id = "returninguser">
-					<div class = "forms" id = "username">
-						Email
-						<input type="text" placeholder="you@gmail.com">
-					</div>
-					<div class = "forms" id = "password">
-						Password
-						<input type="text" >
-					</div>
-					<div class = "forms" id = "signinbutton">
-						<button>Sign In</button>
-					</div>
+					<form>
+						<div class = "form-group" id = "username">
+							<label for="email">Email</label>
+							<input type="email" class="form-control" id="email" placeholder="you@armadillo.com">
+						</div>
+						<div class = "form-group" id = "password">
+							<label for="inputPassword">Password</label>
+							<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+						</div>
+					</form>
+					<a href="dasboard.html"><button type="submit" class="btn btn-primary">Sign In</button></a>
 				</div>
 
+				<!--new user-->
 				<div class = "tabcontent" id="newuser">
-					<div class = "forms" id = "username">
-						Email
-						<input type="text" placeholder="you@gmail.com">
-					</div>
-					<div class = "forms" id = "password">
-						Password
-						<input type="text" >
-					</div>
-					<div class = "forms" id = "password">
-						Confirm Password
-						<input type="text" >
-					</div>
-					<div class = "forms" id = "signinbutton">
-						<button>Create Account</button>
-					</div>
+					<form>
+						<div class = "form-group" id = "username">
+							<label for="email">Email</label>
+							<input type="email" class="form-control" id="email" placeholder="you@armadillo.com">
+						</div>
+						<div class = "form-group" id = "password">
+							<label for="inputPassword">Password</label>
+							<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+						</div>
+						<div class = "form-group" id = "password">
+							<label for="confirmPassword">Confirm Password</label>
+							<input type="password" class="form-control" id="confirmPassword" placeholder="Password">
+						</div>
+					</form>
+					<a href="createuser.html"><button type="submit" class="btn btn-primary">Create Account</button></a>
 				</div>
 			</div>
 

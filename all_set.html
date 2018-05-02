@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Armadillo</title>
+	<meta charset="utf-8">
+	<!-- CSS load -->
+	<link rel="stylesheet" type="text/css" href="pop_up.css">
+	<!-- Bootstrap -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function goToDB(){
+			// console.log(document.getElementById('bd')),
+			// document.getElementById('bd').removeChild(document.getElementByClassName('modal'));
+			window.parent.location='dasboard.html';
+		}
+	</script>
+</head>
+
+
+
+<body>
+	<div class="container1">
+
+		<div class="congratulations-text text-center"><h2>CONGRATULATIONS</h2></div>
+		<div class="checkContainer">
+			<div class="checkContainer-inner">
+				<img src="all_set_check.svg" class= "checkImg" alt="checkbutton">
+				<div class="allSetText text-center">ALL <br> SET</div>
+			</div>
+		</div>
+		<div class="text-center">
+
+			<button class="btn btnExtra btn-large btn-primary" data-dismiss="modal" onclick="goToDB()">GO TO DASHBOARD</button>
+		</div>
+	</div>
+</body>
+</html>

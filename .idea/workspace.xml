@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="144463a3-8d61-48c8-be58-3c202b4e53fa" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/map.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Search.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/Search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchOnMap.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,20 +16,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="map.html" pinned="false" current-in-tab="true">
+<<<<<<< HEAD
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+              <folding />
+=======
+      <file leaf-file-name="map.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+            <state relative-caret-position="266">
+              <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="search.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/search.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
+            <state relative-caret-position="57">
+              <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -41,11 +45,8 @@
       <file leaf-file-name="Search.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/Search.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-              <folding>
-                <element signature="e#1376#1401#0" />
-              </folding>
+            <state relative-caret-position="188">
+              <caret line="167" column="12" lean-forward="true" selection-start-line="167" selection-start-column="12" selection-end-line="167" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -55,6 +56,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
               <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="7" />
+>>>>>>> 41631cf9ade29a9b9c5471ca7cdc4e38a104ef29
             </state>
           </provider>
         </entry>
@@ -79,9 +81,10 @@
         <option value="$PROJECT_DIR$/main.html" />
         <option value="$PROJECT_DIR$/masterstyle.css" />
         <option value="$PROJECT_DIR$/Search.css" />
-        <option value="$PROJECT_DIR$/search.js" />
         <option value="$PROJECT_DIR$/searchOnMap.html" />
+        <option value="$PROJECT_DIR$/map.html" />
         <option value="$PROJECT_DIR$/css/Search.css" />
+        <option value="$PROJECT_DIR$/search.js" />
       </list>
     </option>
   </component>
@@ -91,6 +94,12 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds">
+    <option name="y" value="22" />
+    <option name="width" value="1280" />
+    <option name="height" value="732" />
+=======
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
@@ -98,6 +107,7 @@
     <option name="x" value="-10" />
     <option name="width" value="1942" />
     <option name="height" value="2092" />
+>>>>>>> 41631cf9ade29a9b9c5471ca7cdc4e38a104ef29
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -116,6 +126,11 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+      <pane id="Scope" />
+      <pane id="Scratches" />
+=======
+>>>>>>> 41631cf9ade29a9b9c5471ca7cdc4e38a104ef29
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -157,10 +172,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523137536934</updated>
+<<<<<<< HEAD
+      <workItem from="1523137540461" duration="789000" />
+      <workItem from="1524115839263" duration="132000" />
+      <workItem from="1524410882477" duration="3000" />
+=======
       <workItem from="1523137540461" duration="103000" />
       <workItem from="1523993547206" duration="25600000" />
       <workItem from="1524078418585" duration="53000" />
-      <workItem from="1524078484219" duration="14728000" />
+      <workItem from="1524078484219" duration="21471000" />
     </task>
     <task id="LOCAL-00001" summary="after class">
       <created>1524080591624</created>
@@ -168,16 +188,54 @@
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1524080591624</updated>
+>>>>>>> 41631cf9ade29a9b9c5471ca7cdc4e38a104ef29
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="8:44">
+      <created>1524098669336</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1524098669336</updated>
+    </task>
+    <task id="LOCAL-00003" summary="search 1.0">
+      <created>1524104616146</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1524104616146</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40484000" />
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="924000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="22" width="1280" height="732" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+    <option name="totallyTimeSpent" value="47227000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-5" y="0" width="971" height="1046" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24451411" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -196,6 +254,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+>>>>>>> 41631cf9ade29a9b9c5471ca7cdc4e38a104ef29
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +265,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="after class" />
-    <option name="LAST_COMMIT_MESSAGE" value="after class" />
+    <MESSAGE value="8:44" />
+    <MESSAGE value="search 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="search 1.0" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/map.html">
@@ -220,9 +281,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1482">
           <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
-          <folding>
-            <element signature="e#1376#1401#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -270,22 +328,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+=======
         <state relative-caret-position="114">
           <caret line="6" column="6" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="6" selection-end-column="6" />
+>>>>>>> 41631cf9ade29a9b9c5471ca7cdc4e38a104ef29
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="60">
+          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
+=======
         <state relative-caret-position="95">
           <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="63" selection-start-line="22" selection-start-column="63" selection-end-line="22" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -298,18 +360,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/Search.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding>
-            <element signature="e#1376#1401#0" />
-          </folding>
+        <state relative-caret-position="188">
+          <caret line="167" column="12" lean-forward="true" selection-start-line="167" selection-start-column="12" selection-end-line="167" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/map.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        <state relative-caret-position="266">
+          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="15" lean-forward="true" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+>>>>>>> 41631cf9ade29a9b9c5471ca7cdc4e38a104ef29
         </state>
       </provider>
     </entry>

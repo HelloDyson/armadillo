@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Armadillo</title>
-    <link rel="stylesheet" href="masterstyle.css">
-    <link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="./css/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="masterstyle.css">
+	<link rel="stylesheet" href="main.css">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates" rel="stylesheet">
 
-
+    <script src="bootstrap.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
 	<header>
 	    <a id = "logo" href="main.html">Armadillo</a>
-	    <a id = "loginbutton" href = "login.html"><button>Login</button></a>
+	    <a id = "loginbutton" href = "login.html"><button class="btn btn-primary">Login</button></a>
 	</header>
 	<main>
 		<div id = "folder">
@@ -26,43 +27,51 @@
 			<div id = "centerfolder">
 				<!--tab content-->
 				<div class = "tabcontent active" id = "findsitterform">
-					<div class = "forms" id ="daterange">
-						<div>From:<input type="text" placeholder = "MM/DD/YYYY"></div>
-						<div>To:<input type="text" placeholder="MM/DD/YYYY"></div>
-					</div>
-					<div class = "forms" id = "mypets">
-						For my pet: 
-						<button type="radio">dog</button>
-						<button type="radio">cat</button>
-						<button type="radio">chicken</button>
-						<button type="radio">+</button>
-					</div>
-					<div class = "forms" id = "location">
-						Near:
-						<input type="text" placeholder="Zip Code">
-					</div>
-					<div class = "forms" id = "searchbutton">
-						<button>Search</button>
-					</div>
+					<form>
+						<div class = "form-group">
+							<label>From:</label>
+							<input type="text" class="form-control" placeholder = "MM/DD/YYYY">
+						</div>
+						<div class = "form-group">
+							<label>To:</label>
+							<input type="text" class="form-control" placeholder="MM/DD/YYYY">
+						</div>
+						<div class = "form-group" id = "mypets">
+							<label>For my pet: </label>
+							<div>
+								<button type="radio">
+									<img class="icon" src="image/icon_dog.gif">
+								</button>
+								<button type="radio"><img class="icon" src="image/icon_cat.gif"></button>
+								<button type="radio"><img class="icon" src="image/icon_fish.gif"></button>
+								<button type="radio">+</button>
+							</div>
+						</div>
+						<div class = "form-group">
+							<label>Near:</label>
+							<input type="text" class="form-control" placeholder="Zip Code">
+						</div>
+					</form>
+					<a href="map.html"><button class="btn btn-primary">Search</button></a>
 				</div><!--find sitter-->
 
 				<div class = "tabcontent" id ="becomesitter">
-					<div class = "forms"> New to Armadillo?</div>
-					<div class = "forms" id = "email">
-						email
-						<input type="text" placeholder="you@gmail.com">
-					</div>
-					<div class = "forms" id = "password">
-						Password
-						<input type="text" >
-					</div>
-					<div class = "forms" id = "confirmpassword">
-						Confirm Password
-						<input type="text" >
-					</div>
-					<div class = "forms" id = "signinbutton">
-						<button>Sign In</button>
-					</div>
+					<h1>New to Armadillo?</h1>
+					<form>
+						<div class = "form-group" id = "email">
+							<label>Email</label>
+							<input type="text" class="form-control" placeholder="you@gmail.com">
+						</div>
+						<div class = "form-group" id = "password">
+							<label for="inputPassword">Password</label>
+							<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+						</div>
+						<div class = "form-group" id = "password">
+							<label for="confirmPassword">Confirm Password</label>
+							<input type="password" class="form-control" id="confirmPassword" placeholder="Password">
+						</div>
+					</form>
+					<a href="createsitter.html"><button class="btn btn-primary">Create Account</button></a>
 				</div><!--become sitter-->
 
 
