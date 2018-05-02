@@ -21,6 +21,7 @@ var users = {
 }
 document.addEventListener("click", function(event) {
     if (event.path[1].classList.contains("sitter-info")) {popupInfo(event.path[1].childNodes[1].textContent);}
+	else if (event.path[0].classList.contains("modal")){document.getElementById("bd").removeChild(event.path[0]);}
 })
 
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -110,6 +111,19 @@ function resetImgSizeWH(img, nw, nh, w, h) {
 
 function popupInfo(username) {
     console.log(username);
+    // document.getElementsByClassName("main").style.hidden=true;
+    // window.location="sitters_available_popup.html";
+//    window.location="main.html";
+	var popupwindow=document.createElement("div");
+	popupwindow.className="modal";
+	
+	var frameinside=document.createElement("iframe");
+	frameinside.className="modal-content";
+	frameinside.src="sitters_available1.html";
+//	frameinside.src="main.html";
+	frameinside.setAttribute("frameborder","none");
+	popupwindow.appendChild(frameinside);
+    document.getElementById("bd").appendChild(popupwindow);
 }
 // var splitter,cont1,cont2;
 // var last_x,window_width;

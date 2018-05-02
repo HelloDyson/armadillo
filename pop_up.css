@@ -1,0 +1,297 @@
+/*Color Scheme*/
+:root{
+--darkblue: #0286CE;
+--lightblue: #42CFED;
+--green: #A0CE46;
+--orange: #FDC32A;
+--white: #FFFFFF;
+--gray: #c6c6c6;
+}
+
+/*Fonts so Far*/
+@font-face{
+	font-family: 'Montserrat Alternates', sans-serif;
+}
+@font-face{
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*DOM style*/
+html{
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+/*all pages should have <header>, <main>, <footer>*/
+body{
+	display:grid;
+	grid-template-rows: 7vw 1fr 5vw;
+}
+
+/* Modal Content popup */
+.modal-lg{
+	position: absolute;
+	min-height:450px;
+	max-height: 600px;
+ 	transform: translate(-50%, -50%);
+ 	top: 50%;
+  	left: 50%;
+  	justify-content: center;
+}
+
+.modal-content {
+	position: relative;
+}
+
+.modal-body{
+	overflow: hidden;
+	height: calc(100% - 150px);
+	width: 100%;
+}
+
+/*Login MODAL*/
+
+.modal-dialog{
+	position: absolute;
+	min-height: 350px;
+	max-height: 450px;
+	max-width: 500px;
+ 	transform: translate(-50%, -50%);
+  	justify-content: center;
+}
+
+.modal-body-login{
+	overflow: hidden;
+	width: 100%;
+}
+
+/*allset MODAL*/
+
+
+.modal-body-allset{
+	display: flex;
+	min-height: 70%;
+	justify-content: center;
+}
+
+
+
+
+
+
+
+/*PET SITTER CAROUSEL*/
+
+.carousel-control
+{
+	max-width: 5%;
+}
+
+#myCarousel{
+	height: 100%;
+	width: 100%;
+}
+
+.carousel-inner{
+	height: 100%
+}
+
+.carousel-inner > .item{
+	display: flex;
+	text-align: center;
+	height: 100%;
+}
+
+.cell{
+	/*background-color: lightgrey;*/
+
+	display: inline-block;
+	vertical-align: top;
+	background-color: none;
+	width: 45%;
+	height: 100%;
+	margin: 2px;
+}
+
+.pictureContainer{
+
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+}
+
+.sitterImg{
+	margin: 10px;
+	margin-left: auto;
+    margin-right: auto;
+	background-size: 150px;
+  	width: 60%;
+  	height: 60%;
+}
+
+.button {
+    border-style: solid;
+    border-color: black;
+    color: black;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 4px;
+}
+#book-button{
+	position: relative;
+	font-weight: bold;
+	z-index: 1;
+	bottom: 30px;
+	margin: auto;
+	padding: 10px 5px;
+	border-radius: 5%;
+	border-width: 2px;
+	width: 10px
+	height: 20px;
+}
+
+.text{
+	margin-top: 25px;
+	margin-right: 25px;
+    text-align: justify;
+}
+
+/*LOGIN MODAL*/
+
+.loginText{
+	margin-bottom:30px;
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-size: 5vw;
+	color: var(--gray);
+}
+
+.form{
+	margin-left:20%;
+	margin-right:20%;
+}
+
+#logo{
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-size: 5vw;
+	color: #A0CE46;
+}
+
+.login-footer{
+	position: static;
+}
+/*ALL SET MODAL*/
+
+.allSetContainer{
+	margin:auto;
+}
+.checkImg{
+	width: 100%;
+	height: 100%;
+}
+
+.checkContainer{
+	display: flex;
+	margin:auto;
+	flex-direction: column;
+	align-items: center;
+	height: 250px;
+}
+
+.checkContainer-inner{
+	margin:auto;
+	display: flex;
+	align-items: center;
+}
+
+.allSetText{
+	font-weight: bolder;
+	margin-left: 10%;
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-size: 5vw;
+	color: var(--gray);
+}
+
+.allset-footer {
+	display: flex;
+	justify-content: center;
+}
+
+.congratulations-text{
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-size: 3vw;
+	color: var(--gray);
+}
+
+/*CONFIRMATION MODAL*/
+.modal-body-confirmation{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	font-size: 10px;
+}
+
+.transition{
+	margin-right: 5%;
+	max-width: 11%;
+}
+
+.confirmationPopHeader{
+	margin-bottom: 20px;
+}
+
+.confirmationPopBody{
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 15px;
+}
+
+.tableConfirmationPop{
+    word-wrap: break-word;
+	border-collapse: separate;
+  	border-spacing: 30px 0;
+}
+
+.tableConfirmationPop > *{
+	vertical-align: text-top;
+	padding: 10px 0;
+}
+
+.sitterImg-Confirmation{
+  	width: 40%;
+  	height: 40%;
+}
+.sitterImgCaption{
+	margin: auto;
+}
+
+.confirmation-footer {
+
+	flex-direction: column;
+	justify-content: center;
+}
+
+/*CONFIRMATION MODAL*/
+.modal-body-userprofile{
+	margin: auto;
+}
+
+
+
+header{
+	display: flex;
+	flex-direction: row;
+	vertical-align: top;
+}
+
+header #logo{
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-size: 5vw;
+	color: #A0CE46;
+}
+
+footer {
+	background-color: var(--gray);
+}
