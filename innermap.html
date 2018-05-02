@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-	<title>sitter layer API4.7</title>
+	<title>sitter layer API 3.24</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates" rel="stylesheet">
 	<link rel="stylesheet" href="https://js.arcgis.com/3.24/esri/css/esri.css">
 	<script src="https://js.arcgis.com/3.24/"></script>
@@ -25,7 +25,7 @@
 			bottom: 0;
 			position: absolute;  
 			padding: 10px;
-			font-family: Segoe UI;
+			font-family: 'Montserrat', sans-serif;
 			color: #fff;
 			width: 200px;
 			border-top-right-radius: 8px;
@@ -57,7 +57,7 @@
 		"esri/layers/LabelClass",
 
 		"esri/Color",
-		"esri/geometry/Circle",
+		// "esri/geometry/Circle",
 
 		"dojo/domReady!"
 
@@ -67,7 +67,7 @@
 
 					  SimpleLineSymbol, SimpleFillSymbol, 
 
-					  TextSymbol, SimpleRenderer, LabelClass, Color, Circle, SimpleMarkerSymbol) {
+					  TextSymbol, SimpleRenderer, LabelClass, Color, SimpleMarkerSymbol) {
 
 
 
@@ -82,11 +82,29 @@
 		var layerColor = new Color("#A0CE46");
 		var textColor = new Color("#000000");
 
-		var layerLine = new SimpleLineSymbol("solid", layerColor, 1.5);
+		// var layerLine = new SimpleLineSymbol("solid", layerColor, 1.5);
 
-		var layerSymbol = new SimpleFillSymbol("solid", layerLine, null);
+		// var layerSymbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_SQUARE, 10,
+         //    new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID,
+         //        new Color([255,0,0]), 1),new Color([0,255,0,0.25]));
 
-		var layerRenderer = new SimpleRenderer(layerSymbol);
+        var jsonsymbol = new SimpleMarkerSymbol({
+          "color": "#A0CE46",
+          "size": 12,
+          "angle": 0,
+          "xoffset": 0,
+          "yoffset": 0,
+          "type": "esriSMS",
+          "style": "esriSMSCircle",
+          "outline": {
+              "color": [0,0,0,255],
+              "width": 1,
+              "type": "esriSLS",
+              "style": "esriSLSSolid"
+          }
+        });
+
+		var layerRenderer = new SimpleRenderer(jsonsymbol);
 
 
 
@@ -96,7 +114,7 @@
 
 		var layer = new FeatureLayer(layerUrl, {
 			id: "layer",
-			outFields: ["*"],
+			outFields: ["*"]
 		});
 
 		layer.setRenderer(layerRenderer);
@@ -109,9 +127,9 @@
 
 		var layerLabel = new TextSymbol().setColor(textColor);
 
-		layerLabel.font.setSize("14pt");
+		layerLabel.setSize("14pt");
 
-		layerLabel.font.setFamily("'Montserrat', sans-serif");
+		// layerLabel.setFamily("'Montserrat', sans-serif");
 
 
 
@@ -119,7 +137,8 @@
 
 		var json = {
 
-		  "labelExpressionInfo": {"value": "{name}"}
+		  "labelExpressionInfo": {"value": "{name}"},
+		  // "size": 14
 
 		};
 
