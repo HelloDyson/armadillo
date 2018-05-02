@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+	<title>sitter layer API4.7</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates" rel="stylesheet">
+	<link rel="stylesheet" href="https://js.arcgis.com/3.24/esri/css/esri.css">
+	<script src="https://js.arcgis.com/3.24/"></script>
+	<script src="js/innermap.js"></script>
+	
+	<style>
+		html,body,#map {
+			padding: 0;
+			margin: 0;
+			height: 100%;
+			width: 100%;
+		}
+		#info {
+			background-color: #000;
+			z-index: 92;
+			left: 0;
+			bottom: 0;
+			position: absolute;  
+			padding: 10px;
+			font-family: Segoe UI;
+			color: #fff;
+			width: 200px;
+			border-top-right-radius: 8px;
+			opacity: 0.8;
+			max-height: 80%;
+			overflow-y: scroll;
+		}
+	</style>
+
+	<script>
+
+	require([
+
+		"esri/map", 
+
+		"esri/geometry/Extent",
+
+		"esri/layers/FeatureLayer",
+
+		"esri/symbols/SimpleLineSymbol",
+
+		"esri/symbols/SimpleFillSymbol",
+		"esri/symbols/SimpleMarkerSymbol",
+
+		"esri/symbols/TextSymbol",
+
+		"esri/renderers/SimpleRenderer",
+
+		"esri/layers/LabelClass",
+
+		"esri/Color",
+		"esri/geometry/Circle",
+
+		"dojo/domReady!"
+
+	  ],
+
+	  function(Map, Extent, FeatureLayer,
+
+					  SimpleLineSymbol, SimpleFillSymbol, 
+
+					  TextSymbol, SimpleRenderer, LabelClass, Color, Circle, SimpleMarkerSymbol) {
+
+
+
+		var map = new Map("map", {
+			basemap: "gray-vector",
+			center: [-71.100955, 42.363748],
+			zoom: 15,
+			showLabels : true
+		});
+
+
+		var layerColor = new Color("#A0CE46");
+		var textColor = new Color("#000000");
+
+		var layerLine = new SimpleLineSymbol("solid", layerColor, 1.5);
+
+		var layerSymbol = new SimpleFillSymbol("solid", layerLine, null);
+
+		var layerRenderer = new SimpleRenderer(layerSymbol);
+
+
+
+		// create the feature layer to render and label
+
+		var layerUrl = "https://services6.arcgis.com/Tvr1lF94GTEgG2UT/arcgis/rest/services/Sitters/FeatureServer/0";
+
+		var layer = new FeatureLayer(layerUrl, {
+			id: "layer",
+			outFields: ["*"],
+		});
+
+		layer.setRenderer(layerRenderer);
+
+
+
+
+
+		// create a text symbol to define the style of labels
+
+		var layerLabel = new TextSymbol().setColor(textColor);
+
+		layerLabel.font.setSize("14pt");
+
+		layerLabel.font.setFamily("'Montserrat', sans-serif");
+
+
+
+		//this is the very least of what should be set within the JSON  
+
+		var json = {
+
+		  "labelExpressionInfo": {"value": "{name}"}
+
+		};
+
+
+
+		//create instance of LabelClass (note: multiple LabelClasses can be passed in as an array)
+
+		var labelClass = new LabelClass(json);
+
+		labelClass.symbol = layerLabel; // symbol also can be set in LabelClass' json
+
+		layer.setLabelingInfo([ labelClass ]);
+
+		map.addLayer(layer);
+
+
+
+	  });
+
+	</script>
+
+</head>
+
+
+
+<body>
+
+  <div id="map"></div>
+
+</body>
+
+
+
+</html>
+
