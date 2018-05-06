@@ -20,9 +20,13 @@ var users = {
     18: "Pearce"
 }
 document.addEventListener("click", function(event) {
+	console.log(event.target);
     if (event.path[1].classList.contains("sitter-info")) {popupInfo(event.path[1].childNodes[1].textContent);}
 	else if (event.path[0].classList.contains("modal")){document.getElementById("bd").removeChild(event.path[0]);}
-})
+	else if (event.path[0].tagName==="text"){console.log("event.path[0].textContent");}
+});
+
+
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -41,33 +45,47 @@ document.addEventListener("DOMContentLoaded", function(event) {
         photo.className = "sitter-image";
         var image = document.createElement("img");
         image.src = "image/"+username+ ".jpg";
-        resetImgSizeWH(image, image.naturalWidth, image.naturalHeight, 200,200);
+        
+		var ratelen = Math.floor(Math.random()*50)/10;
         var rate = document.createElement("div");
         rate.className = "info rate";
-        var ratelen = Math.round(Math.random()*50)/10;
-        // for (var i=1; i<=ratelen;i++){
-        //     rate.textContent += "\2605";
-        // }
-        // rate.textContent = Math.floor(Math.random()*50)/10;
-        var rateinner = document.createElement("div");
-        // var rateouter = document.createElement("div");
-        // rateouter.className = "stars-outer";
-        rateinner.className = "stars-inner";
-        // rateouter.style.width = (Math.floor(Math.random()*50)/10 * 20) + "%";
-        rateinner.style.width = ((Math.floor(Math.random()*40)/10 * 20) + 20) + "%";
-        // rate.appendChild(rateouter);
+		var rateinner = document.createElement("div");
+		rateinner.className="fivestars";
+		
+		for (var st=1; st<=5;st++){
+			var star = document.createElement("span");
+			star.className="fa fa-star";
+//			console.log(Math.round(ratelen));
+			if (st<=Math.round(ratelen)){star.classList.add("checked");}
+			rateinner.appendChild(star);
+		}
+//        var ratelen = Math.round(Math.random()*50)/10;
+//        // for (var i=1; i<=ratelen;i++){
+//        //     rate.textContent += "\2605";
+//        // }
+//        // rate.textContent = Math.floor(Math.random()*50)/10;
+//        var rateinner = document.createElement("div");
+//        // var rateouter = document.createElement("div");
+//        // rateouter.className = "stars-outer";
+//        rateinner.className = "stars-inner";
+//		rateinner.style.color="var(--green)"
+//        // rateouter.style.width = (Math.floor(Math.random()*50)/10 * 20) + "%";
+//        rateinner.style.width = ((Math.floor(Math.random()*40)/10 * 20) + 20) + "%";
+//        // rate.appendChild(rateouter);
         rate.appendChild(rateinner);
         var insurance = document.createElement("div");
         insurance.className = "info insurance";
         insurance.textContent = "insurance";
-        if (Math.random()>0.5) {insurance.style.color="gray"};
+        if (Math.random()>0.5) {insurance.style.color="gray"}
+		else {insurance.style.color="dodgerblue";insurance.style.borderColor="dodgerblue"}
         var certificated = document.createElement("div");
         certificated.className = "info certificated";
-        certificated.textContent = "certificated";
-        if (Math.random()>0.5) {certificated.style.color="gray"};
+        certificated.textContent = "certified";
+        if (Math.random()>0.5) {certificated.style.color="gray";}
+		else {certificated.style.color="mediumpurple";certificated.style.borderColor="mediumpurple"}
         var price = document.createElement("div");
         price.className = "info price";
-        price.textContent = "$ "+ Math.floor(Math.random() * 300) + "/ day";
+        price.textContent = "$ "+ Math.floor(Math.random() * 300) + " / day";
         var arrow = document.createElement("img");
         arrow.className = "arrow";
         arrow.src = "image/Arrow_top.svg";
@@ -82,27 +100,27 @@ document.addEventListener("DOMContentLoaded", function(event) {
         sitter.appendChild(price);
         sitter.appendChild(arrow);
         leftPanel.appendChild(sitter);
+		image.onload = function(){resetImgSizeWH(this, this.naturalWidth, this.naturalHeight, 180,180);}
+		
 
-        sitter.className = "sitter-info";
+        sitter.className = "sitter-info card";
+		sitter.id = "info_" + username;
 
     }
+
 });
 
 function resetImgSizeWH(img, nw, nh, w, h) {
     var nwh = nw / nh;
+	
     var wh = w / h;
+//	console.log(nw, nh, nwh, wh);
     if (nwh > wh) {
         img.height = h;
-        var width = parseInt(nwh * h);
-        img.width = width;
-        var left = parseInt((width - w) / 2) * -1;
-        img.style.marginLeft = left + "px";
+        img.style.marginLeft = parseInt((parseInt(nwh * h) - w) / 2) * (-1) + "px";
     } else if (nwh < wh) {
         img.width = w;
-        var height = parseInt(1 / nwh * w);
-        img.height = height;
-        var top = parseInt((height - h) / 2) * -1;
-        img.style.marginTop = top + "px";
+        img.style.marginTop = parseInt((parseInt(1 / nwh * w) - h) / 2) * (-1) + "px";
     } else {
         img.height = h;
         img.width = w;
@@ -119,11 +137,29 @@ function popupInfo(username) {
 	
 	var frameinside=document.createElement("iframe");
 	frameinside.className="modal-content";
-	frameinside.src="sitters_available_popup.html";
+	frameinside.src="sitters_available1.html";
 //	frameinside.src="main.html";
 	frameinside.setAttribute("frameborder","none");
 	popupwindow.appendChild(frameinside);
     document.getElementById("bd").appendChild(popupwindow);
+	
+}
+
+
+function mapnumber(){
+	setTimeout(function() { 
+		var subwin = document;
+		var t = subwin.getElementsByTagName("text");
+		var c = subwin.getElementsByTagName("circle");
+//        var labels = document.getElementsByTagName("text");
+		console.log("label is ");
+		console.log(t);
+		console.log(c);
+		for (ts in t){
+			t[ts].textContent = "1";
+		}
+    }, 8000);
+	
 }
 // var splitter,cont1,cont2;
 // var last_x,window_width;

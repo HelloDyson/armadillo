@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=15,maximum-scale=15,user-scalable=no">
+	<title>sitter layer API4.7</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates" rel="stylesheet">
+	<link rel="stylesheet" href="https://js.arcgis.com/4.7/esri/css/main.css">
+	<script src="https://js.arcgis.com/4.7/"></script>
+	<script src="js/innermap.js"></script>
+	
+	<style>
+		html,body,#viewDiv {
+			padding: 0;
+			margin: 0;
+			height: 100%;
+			width: 100%;
+		}
+	</style>
+
+	<script>
+		require([
+
+			"esri/Map",
+			"esri/views/SceneView",
+
+			"esri/layers/FeatureLayer",
+			"esri/layers/support/LabelClass",
+			"esri/symbols/TextSymbol",
+
+			"dojo/domReady!"
+
+		  ],
+
+		  function(
+
+			Map, SceneView,
+
+			FeatureLayer,LabelClass,TextSymbol
+
+		  ) {
+			var defaultSym = {
+				type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+
+				color: "#A0CE46",
+
+				outline: {
+					color: "seagreen",width: 0.5
+				}
+			};
+			
+			var renderer = {
+				type: "simple", // autocasts as new SimpleRenderer()
+				symbol: defaultSym,
+				style: "circle",
+				visualVariables: [{
+					type: "size",
+					field: "num",
+					valueExpression: "( 1 / $feature.num ) * 80 + 20"
+				}]
+			};
+			
+			var numLabelClass = new LabelClass({
+				labelExpressionInfo: {expression: "$feature.num"},
+				symbol: {
+					type: "text",  // autocasts as new TextSymbol()
+					color: "black",
+					size:20
+
+				},
+				labelPlacement: "center-center",
+			});
+
+			
+			
+			var map = new Map({
+				basemap: "gray-vector",				
+
+			});
+			
+			
+			var view = new SceneView({
+				container: "viewDiv",
+                qualityProfile: "high",
+				map: map,
+                // camera: {
+                //     position: [-71.100955, 42.363748, 3000],
+                //     tilt: 0
+                // },
+                center: [-71.100955, 42.363748],
+                zoom: 15,
+
+			});
+			// view.environment.atmosphere.quality="high";
+
+
+              var featureLayer = new FeatureLayer({
+
+			  	url: "https://services6.arcgis.com/Tvr1lF94GTEgG2UT/arcgis/rest/services/Sitters/FeatureServer/0",
+				outFields: ["*"],
+				renderer: renderer,
+				labelsVisible: true,
+				labelingInfo: [{
+					labelExpression: "[num]",
+					labelPlacement: "center-center",
+					symbol: {
+						type: "text",  // autocasts as new TextSymbol()
+						color: [ 0,0,0,1 ],
+						font: {
+							size: 14,
+                            family: "monospace",
+							// weight: "bolder",
+
+						}
+					},
+                    xoffset: "10px",
+					minScale: 0,
+					maxScale: 0
+				}]
+				
+
+			});
+
+
+
+			map.add(featureLayer);
+			
+			view.on("pointer-down", eventHandler);
+			function eventHandler(event) {
+				view.hitTest(event).then(getGraphics);
+
+			}
+            view.on("mouse-wheel", eventHandler);
+            function eventHandler(event) {
+                event.stopPropagation();
+                view.hitTest(event).then(getGraphics);
+            }
+
+            view.goTo({
+              target: view.graphics,
+              heading: 0,
+              tilt: 0
+            });
+			
+			function getGraphics(response) {
+				var graphic = response.results.filter(function(result) {
+					return result.graphic.layer === featureLayer;
+				})[0].graphic;
+				
+				var attributes = graphic.attributes;
+				var num = attributes.num;
+				var name = attributes.name;
+				console.log(num + ": " + name);
+				var info_card = window.parent.document.getElementById("info_" + name);
+				info_card.parentElement.scrollTop = 230*(num-1);
+                info_card.classList.add("onhover");
+                setTimeout(function(){ info_card.classList.remove("onhover"); }, 2000);
+			}
+		});
+
+	</script>
+
+</head>
+
+
+
+<body>
+  <div id="viewDiv"></div>
+</body>
+
+</html>
+
