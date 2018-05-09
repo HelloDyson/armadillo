@@ -261,7 +261,7 @@
     width: 100%;
 }
 .modal{
-	display: inline-flex; 
+	display: inline-flex;
 	grid-template-columns: 15% auto 15%;
     position: fixed;
     z-index: 1;
@@ -273,15 +273,32 @@
     background-color: rgba(0,0,0,0.4);
 	
 }
+
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 10px;
     border: 1px solid #888;
-    /* top: 10%; */
-    /* left: 15%; */
+
     width: 70%;
-    height: 70%;
+    height: 50%;
 }
+
 @media screen {
+}
+
+
+
+.carousel-inner > .item {
+      width: 70%;
+      margin: auto;
+  }
+
+.container{
+
+}
+
+#myCarousel{
+    height: 100%;
+    width: 100%;
 }
