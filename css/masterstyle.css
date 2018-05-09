@@ -1,0 +1,46 @@
+/*Color Scheme*/
+:root{
+--darkblue: #0286CE;
+--lightblue: #42CFED;
+--green: #A0CE46;
+--orange: #FDC32A;
+--white: #FFFFFF;
+--gray: #c6c6c6;
+}
+
+/*Fonts so Far*/
+@font-face{
+	font-family: 'Montserrat Alternates', sans-serif;
+}
+@font-face{
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*DOM style*/
+html{
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+/*all pages should have <header>, <main>, <footer>*/
+body{
+	display:grid;
+	grid-template-rows: 7vw 1fr 5vw;
+}
+
+header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+header #logo{
+	font-family: 'Montserrat Alternates', sans-serif;
+	text-decoration: none;
+	font-size: 5vw;
+	color: #A0CE46;
+}
+
+footer {
+	background-color: var(--gray);
+}

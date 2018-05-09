@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <link href='../fullcalendar.min.css' rel='stylesheet' />
+  <link href='../fullcalendar.print.min.css' rel='stylesheet' media='print' />
+  <script src='../lib/moment.min.js'></script>
+  <script src='../lib/jquery.min.js'></script>
+  <script src='../fullcalendar.min.js'></script>
+  <script>
+
+    $(document).ready(function () {
+
+      $('#calendar').fullCalendar({
+        defaultDate: '2018-04-18',
+        editable: true,
+        eventLimit: true, // allow "more" link when too many events
+        events: [
+          {
+            title: 'Attending UI Studio',
+            start: '2018-04-21'
+          },
+          {
+            title: "Jackie's Dog",
+            start: '2018-04-07',
+            end: '2018-04-10'
+          },
+          {
+            id: 999,
+            title: "Lukas's Fish",
+            start: '2018-04-09T16:00:00',
+            end: '2018-04-20'
+          },
+          {
+            title: "Tuo's Elephant",
+            start: '2018-04-16',
+            end: '2018-04-23'
+          },
+        ]
+      });
+    });
+
+  </script>
+  <style>
+    body {
+      margin: 40px 10px;
+      padding: 0;
+      font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+      font-size: 14px;
+    }
+
+    #calendar {
+      /* max-width: 900px; */
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id='calendar'></div>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="js/search.js"></script>
+<head>
+
+    <meta charset="UTF-8">
+    <title>Search a sitter on map</title>
+	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates" rel="stylesheet">
+	
+    <link type="text/css" rel="stylesheet" href="masterstyle.css">
+    <link type="text/css" rel="stylesheet" href="css/Search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+
+</head>
+<body id="bd">
+<header>
+    <a id = "logo" href="main.html">Armadillo</a>
+    <a id = "loginbutton" href = "login.html"><button class="header-btn">Login</button></a>
+</header>
+
+
+<div class="main">
+	<div class="navi-bar col-12">
+    <div class="filter card" >
+        <div>Zip-code: </div>
+        <input type="number" value="02139" >
+    </div>
+
+    <div class="filter card" >
+        <div>Sorted by </div>
+        <div>
+            <select name="sort" class="selectbox">
+                <option value="byclosest">closest</option>
+                <option value="byl2h">price: low to high</option>
+                <option value="byh2l">price: high to low</option>
+                <option value="byrate">rating</option>
+            </select>
+        </div>
+    </div>
+    <div class="filter card" >
+        <div>Price </div>
+        <input class="slider" type="range">
+    </div>
+    <div class="filter card" >
+        <div>Rating </div>
+        <div class="fivestars">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </div>
+    </div>
+    <div class="filter card" >
+        <div>From </div>
+        <input class="dateinput" type="date" value="2018-04-18">
+    </div>
+    <div class="filter card" >
+        <div>To </div>
+        <input class="dateinput" type="date" value="2018-04-20">
+    </div>
+</div>
+
+    <div id="leftmain" class="left-split col-12">
+		
+	</div>
+    <div id="rightmain" class="right-split col-12">
+        <iframe class="map-container" frameborder="none" src="innermap4.7.html"></iframe>
+
+    </div>
+</div>
+
+</body>
+
+<footer></footer>
+</html>
