@@ -1,56 +1,50 @@
-// import {usersjs} from "./js/createUser.js";
-// var usersfromjs;
-// require(function (usersjs) {
-//     usersfromjs = usersjs();
-//     console.log(usersfromjs);
-// },
-// [`./js/createUser.js`]);
-var cu = require(["./js/createUser.js"], usersjs());
-// var cu = require("./js/createUser.js");
-var usersfromjs = cu;
-// var usersfromjs = usersjs();
-var users = {
-    0: "Lukas",
-    1: "Jackie",
-    2: "Dyson",
-    3: "Jenny",
-    4: "Tuo",
-    5: "Rem",
-    6: "Oscar",
-    7: "Jason",
-    8: "Andrew",
-    9: "Jack",
-    10: "Williams",
-    11: "Jordan",
-    12: "Horton",
-    13: "Phillips",
-    14: "Burris",
-    15: "Willy",
-    16: "Lynn",
-    17: "Jaden",
-    18: "Pearce"
-};
+var sitterspkg;
+require(["./js/createUser.js"], sitterspkg=test());
+var sitters = sitterspkg[0];
+var sitternames = sitterspkg[1];
+var raterequest;
+
 document.addEventListener("click", function(event) {
     console.log(event.target);
     if (event.path[1].classList.contains("sitter-info")) {popupInfo(event.path[1].childNodes[1].textContent);}
     else if (event.path[0].classList.contains("modal")){document.getElementById("bd").removeChild(event.path[0]);}
     else if (event.path[0].tagName==="text"){console.log("event.path[0].textContent");}
+    else if (event.path[0].classList.contains("fa-star")) {
+        raterequest = parseInt(event.path[0].id);
+        for (var st=1; st<=5;st++){
+            var star = document.getElementById(st);
+            star.className="fa fa-star";
+            if (st<=raterequest){star.classList.add("checked");}
+        }
+    }
 });
 
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    // importScripts('/createUser.js');
+    var today = new Date();
+    var tomorrow = new Date(today.getTime() + 2*(24 * 60 * 60 * 1000));
+
+    function tolocaltime(today) {
+        var year = today.getFullYear();
+        var month = parseInt(today.getMonth()+1)
+        var day = today.getDate()
+        if (month<10) {month = "0"+month;}
+        if (day<10) {day = "0"+day;}
+        return year+"-"+month+"-"+day;
+    }
+
+    document.getElementById("fromdate").value = tolocaltime(today);
+    document.getElementById("todate").value = tolocaltime(tomorrow);
 
     var leftPanel = document.getElementById("leftmain");
 
-    // var usersfromjs = usersjs();
-    // console.log(cu);
-    console.log(usersfromjs);
-    // console.log(usersjs);
+    console.log(sitters);
+    console.log(sitternames);
 
-    for (var i=0;i<19;i++){
-        var username = users[i];
+
+    for (var i=0;i<sitternames.length;i++){
+        var username = sitternames[i];
         var sitter = document.createElement("div");
         var number = document.createElement("div");
         number.textContent = ""+(i+1);
@@ -63,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var image = document.createElement("img");
         image.src = "image/"+username+ ".jpg";
 
-        var ratelen = Math.floor(Math.random()*50)/10;
+        var ratelen = sitters[username].rate;
         var rate = document.createElement("div");
         rate.className = "info rate";
         var rateinner = document.createElement("div");
@@ -72,37 +66,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
         for (var st=1; st<=5;st++){
             var star = document.createElement("span");
             star.className="fa fa-star";
-//			console.log(Math.round(ratelen));
             if (st<=Math.round(ratelen)){star.classList.add("checked");}
             rateinner.appendChild(star);
         }
-//        var ratelen = Math.round(Math.random()*50)/10;
-//        // for (var i=1; i<=ratelen;i++){
-//        //     rate.textContent += "\2605";
-//        // }
-//        // rate.textContent = Math.floor(Math.random()*50)/10;
-//        var rateinner = document.createElement("div");
-//        // var rateouter = document.createElement("div");
-//        // rateouter.className = "stars-outer";
-//        rateinner.className = "stars-inner";
-//		rateinner.style.color="var(--green)"
-//        // rateouter.style.width = (Math.floor(Math.random()*50)/10 * 20) + "%";
-//        rateinner.style.width = ((Math.floor(Math.random()*40)/10 * 20) + 20) + "%";
-//        // rate.appendChild(rateouter);
         rate.appendChild(rateinner);
         var insurance = document.createElement("div");
         insurance.className = "info insurance";
         insurance.textContent = "insurance";
-        if (Math.random()>0.5) {insurance.style.color="gray"}
-        else {insurance.style.color="dodgerblue";insurance.style.borderColor="dodgerblue"}
+        if (sitters[username].insurance) {insurance.style.color="dodgerblue";insurance.style.borderColor="dodgerblue";}
+        else {insurance.style.color="gray";}
         var certificated = document.createElement("div");
         certificated.className = "info certificated";
         certificated.textContent = "certified";
-        if (Math.random()>0.5) {certificated.style.color="gray";}
-        else {certificated.style.color="mediumpurple";certificated.style.borderColor="mediumpurple"}
+        if (sitters[username].certified) {certificated.style.color="mediumpurple";certificated.style.borderColor="mediumpurple";}
+        else {certificated.style.color="gray";}
         var price = document.createElement("div");
         price.className = "info price";
-        price.textContent = "$ "+ Math.floor(Math.random() * 300) + " / day";
+        price.textContent = "$ "+ sitters[username].price + " / day";
         var arrow = document.createElement("img");
         arrow.className = "arrow";
         arrow.src = "image/Arrow_top.svg";
@@ -146,16 +126,13 @@ function resetImgSizeWH(img, nw, nh, w, h) {
 
 function popupInfo(username) {
     console.log(username);
-    // document.getElementsByClassName("main").style.hidden=true;
-    // window.location="sitters_available_popup.html";
-//    window.location="main.html";
     var popupwindow=document.createElement("div");
     popupwindow.className="modal";
 
     var frameinside=document.createElement("iframe");
     frameinside.className="modal-content";
     frameinside.src="sitters_available1.html";
-//	frameinside.src="main.html";
+
     frameinside.setAttribute("frameborder","none");
     popupwindow.appendChild(frameinside);
     document.getElementById("bd").appendChild(popupwindow);
@@ -163,18 +140,18 @@ function popupInfo(username) {
 }
 
 
-function mapnumber(){
-    setTimeout(function() {
-        var subwin = document;
-        var t = subwin.getElementsByTagName("text");
-        var c = subwin.getElementsByTagName("circle");
-//        var labels = document.getElementsByTagName("text");
-        console.log("label is ");
-        console.log(t);
-        console.log(c);
-        for (ts in t){
-            t[ts].textContent = "1";
-        }
-    }, 8000);
-
-}
+// function mapnumber(){
+//     setTimeout(function() {
+//         var subwin = document;
+//         var t = subwin.getElementsByTagName("text");
+//         var c = subwin.getElementsByTagName("circle");
+// //        var labels = document.getElementsByTagName("text");
+//         console.log("label is ");
+//         console.log(t);
+//         console.log(c);
+//         for (ts in t){
+//             t[ts].textContent = "1";
+//         }
+//     }, 8000);
+//
+// }
