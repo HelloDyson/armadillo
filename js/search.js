@@ -281,7 +281,8 @@ function popupInfo(username, userNr) {
         var bookButton = document.createElement("button");
         bookButton.className = "btn btnExtra btn-large btn-primary button";
         bookButton.id = "book-button";
-        bookButton.onclick = function(){window.open('confirmation_popup1.html','_self');}
+        bookButton.setAttribute('onclick', "window.open('confirmation_popup1.html', '_self' )");
+        //bookButton.onclick = function(){window.open('confirmation_popup1.html','_self');}
         bookButton.innerHTML = "<b>"+"Book" + " "+ users[key] +"</b>"+ "\n" + "From: " + dateStart + "  To: " + dateEnd;
 
 

@@ -51,7 +51,7 @@ body{
             '. e1 e1 e1 e1'
             '. f1 f1 f1 f1 ';
     grid-template-columns: 10% 20% 20% 20% 20%;
-    grid-template-rows: 10% 40% 5% 5% 8% 10%;
+    grid-template-rows: 15% 40% 10% 10% 10% 15%;
 }
 .containerCarousel{
 	grid-area: a;
