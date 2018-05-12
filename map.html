@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="js/require.js"></script>
+<script src="js/createUser.js"></script>
 <script src="js/search.js"></script>
+
+
 <head>
 
     <meta charset="UTF-8">
     <title>Search a sitter on map</title>
 	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates" rel="stylesheet">
-    
-    <!-- Lukas Inputs -->
+	
+    <link type="text/css" rel="stylesheet" href="masterstyle.css">
+    <link type="text/css" rel="stylesheet" href="css/Search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <!-- Lukas Inputs -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
-  
-    <link type="text/css" rel="stylesheet" href="masterstyle.css">
-    <link type="text/css" rel="stylesheet" href="css/Search.css">
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
 
 </head>
 <body id="bd">
@@ -56,20 +55,20 @@
     <div class="filter card" >
         <div>Rating </div>
         <div class="fivestars">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
+            <span id = '1' class="fa fa-star checked"></span>
+            <span id = '2' class="fa fa-star checked"></span>
+            <span id = '3' class="fa fa-star checked"></span>
+            <span id = '4' class="fa fa-star"></span>
+            <span id = '5' class="fa fa-star"></span>
         </div>
     </div>
     <div class="filter card" >
         <div>From </div>
-        <input class="dateinput" type="date" value="2018-04-18">
+        <input id="fromdate" class="dateinput" type="date" value="2018-04-18">
     </div>
     <div class="filter card" >
         <div>To </div>
-        <input class="dateinput" type="date" value="2018-04-20">
+        <input id="todate" class="dateinput" type="date" value="2018-04-20">
     </div>
 </div>
 
